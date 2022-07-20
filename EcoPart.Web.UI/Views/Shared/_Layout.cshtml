@@ -1,0 +1,380 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - EcoPart</title>
+
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap link -->
+    <!-- Google-Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Google-Font -->
+    <link rel="stylesheet" href="./assets/sass/home.css">
+
+    <title>Home Page</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="firstpart-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="currency-language">
+                            <div class="language">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABbklEQVRoge3XvUtCURjH8e9VIQKhIZesFiFaSlpaIreouSlpihqCoq05aosaWloacu8fEBoiSAgaQo1qsTdIwl5MCsMKxYbLVVoK9alD8Xymw+HAeX73vHAuKKWUUn+Y5TTcW/myyUJqVRrzWgAu04U0SgOYpgFM0wCmaQDTPE6juO41WUfNnCeE58tR9fD5YW4NgiE4S8LlCUQjcHUqPhVIB2htg0jCLnyyD3J3dn9HF/jaIXcLpaLolLIBZlbB5YbFMDxnq/3pFIRGIdAD8V24TtlhBMgG6B+G5N7n4gGamqF3AMLzUMjD7KBYAPlbyLK+HyNIdgUOd+xVaPHB00O1/60Ax/uwuWBvoWxGbMrK5yqHaPyHxh+AjQM4P4Kl8eo26eyG1xd4zIgdYivGD/zQ3FzARNC+fSJxWInC9DK8F+A+LX4DgfQK/CJnBSpnYGhqxFw19YhtA//gLaQBTNMApmkA0zSAUkoppRrwAQCSWtuSXmYYAAAAAElFTkSuQmCC">
+                                <span>Azərbaycan</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <div class="currency">
+                                <span>(₼)</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="lang-cur">
+                            <div class="dropdown-language">
+                                <div class="english">
+                                    <img src="https://img.icons8.com/color/48/000000/usa.png" />
+                                    <span>English</span>
+                                </div>
+                                <div class="azerbaijan">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABbklEQVRoge3XvUtCURjH8e9VIQKhIZesFiFaSlpaIreouSlpihqCoq05aosaWloacu8fEBoiSAgaQo1qsTdIwl5MCsMKxYbLVVoK9alD8Xymw+HAeX73vHAuKKWUUn+Y5TTcW/myyUJqVRrzWgAu04U0SgOYpgFM0wCmaQDTPE6juO41WUfNnCeE58tR9fD5YW4NgiE4S8LlCUQjcHUqPhVIB2htg0jCLnyyD3J3dn9HF/jaIXcLpaLolLIBZlbB5YbFMDxnq/3pFIRGIdAD8V24TtlhBMgG6B+G5N7n4gGamqF3AMLzUMjD7KBYAPlbyLK+HyNIdgUOd+xVaPHB00O1/60Ax/uwuWBvoWxGbMrK5yqHaPyHxh+AjQM4P4Kl8eo26eyG1xd4zIgdYivGD/zQ3FzARNC+fSJxWInC9DK8F+A+LX4DgfQK/CJnBSpnYGhqxFw19YhtA//gLaQBTNMApmkA0zSAUkoppRrwAQCSWtuSXmYYAAAAAElFTkSuQmCC">
+                                    <span>Azərbaycan</span>
+                                </div>
+                            </div>
+
+
+                            <div class="dropdown-currency">
+                                <div class="manat">
+                                    (₼)
+                                </div>
+                                <div class="usd">
+                                    ($)
+                                </div>
+                                <div class="euro">
+                                    (€)
+                                </div>
+                                <div class="rubl">
+                                    (₽)
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="col-6">
+                        <div class="navbar-account-notific">
+                            <div class="navbar">
+                                <ul>
+                                    <li>
+                                        <a href="#">Hədiyyələr</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kömək</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Əlaqə</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Təklif / Şikayət</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sifarişlər</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="account">
+                                <i class="fas fa-user"></i>
+                                <span>Hesabım</span>
+                                <i class="fas fa-caret-down"></i>
+
+                            </div>
+                            <div class="dropdown-account">
+                                <div class="first">
+                                    Sifarişlər
+                                </div>
+                                <div class="second">
+                                    Geri qaytarılma tələbləri
+                                </div>
+                                <div class="third">
+                                    Gözləmə səbəti
+                                </div>
+                                <div class="fourth">
+                                    Xüsusi sifarişlər
+                                </div>
+                                <div class="sign-btn">
+                                    <div class="btns">
+                                        <div class="signin">
+                                            <button> <a style="color:white;text-decoration:none;" href="./login.html">Daxil ol</a> </button>
+                                        </div>
+                                        <div class="signup">
+                                            <button> <a href="./register.html"> Qeydiyyatdan keç</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notific">
+                                <i class="fas fa-bell"></i>
+                            </div>
+
+                            <div class="not-count">
+                                0
+                            </div>
+                        </div>
+                        <div class="dropdown-noti">
+                            <div class="title">
+                                <div class="title-name">
+                                    Bildirimlər
+                                </div>
+                                <div class="notification-count">
+                                    0
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <div class="new-products">
+                                        YENI MƏHSULLAR
+                                    </div>
+                                    <div class="customer-info">
+                                        Hörmətli müştərilər, stoka yeni məhsullar gəlmişdir.
+                                    </div>
+                                    <div class="two-btn">
+                                        <a href="#">ƏTRAFLI OXU</a>
+                                        <a id="b" href="#">BURAX</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondpart-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="logo">
+                            <a href="./home.html">
+                                <img src="./assets/img/logo_mobex.png" alt="mobex">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="search">
+                            <input type="text" placeholder="Məhsul axtar">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="waiting-basket">
+                            <div class="waiting">
+                                <i class="fas fa-clock"></i>
+                                <span>Gözləmə səbəti</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <div class="dropdown-waiting">
+                                Gözləmə səbəti
+                            </div>
+                            <div class="basket-card">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>Sifariş səbəti</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <div class="dropdown-basket">
+                                <div class="products">
+                                    <div class="picture-price-name">
+                                        <div class="picture">
+                                            <img src="./assets/img/B37316N27K.jpeg" alt="product">
+                                        </div>
+                                        <div class="price-name">
+                                            <div class="name">
+                                                <a href="#"> Raspredval datciki B37316N27K</a>
+                                            </div>
+                                            <div class="price">
+                                                6 x 23.40 ₼
+                                            </div>
+                                        </div>
+                                        <div class="remove-icon">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="product-btn">
+                                    <button id="show-basket"> <a href="./basket.html">Səbəti göstər</a> </button>
+                                    <button id="complete"><a href="#">Sifarişi tamamla</a></button>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="markas">
+                            <ul>
+                                <li>
+                                    <a href="./products.html" style="padding-right: 20px;">Toyota/Lexus</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nissan / Infinity</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mitsubishi</a>
+                                </li>
+                                <li>
+                                    <a href="#">Hyundai / Kia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mercedes</a>
+                                </li>
+                                <li>
+                                    <a href="#">BMW</a>
+                                </li>
+                                <li>
+                                    <a href="#">Volkswagen</a>
+                                </li>
+                                <li>
+                                    <a href="#">Audi</a>
+                                </li>
+                                <li>
+                                    <a href="#">Land Rover</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ford</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="social-networks">
+            <div class="container">
+                <div class="name-fb-tw">
+                    <div class="name">
+                        Sosial şəbəkələr
+                    </div>
+                    <div class="fb-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="fb-name">
+                        Facebook
+                    </div>
+                    <div class="tw-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="tw-name">
+                        Twitter
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="links-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-sm-12">
+                        <div class="common-about">
+
+                            <div class="links">
+                                <h6 class="oneh">Mobex Parts <i class="fas fa-angle-down"></i></h6>
+                                <div class="one">
+                                    <a href="#">Şirkət haqqında</a>
+                                    <a href="#">Bizim komanda</a>
+                                </div>
+
+                            </div>
+                            <div class="links">
+                                <h6 class="twoh">Məlumatlar  <i class="fas fa-angle-down"></i></h6>
+                                <div class="two">
+                                    <a href="#">Əlaqə</a>
+                                    <a href="#">Bizə yazın</a>
+                                    <a href="#">Məxfilik siyasəti</a>
+                                    <a href="./blog.html">Bloq</a>
+                                </div>
+
+                            </div>
+                            <div class="links">
+                                <h6 class="threeh">Müştəri xidmətləri  <i class="fas fa-angle-down"></i></h6>
+                                <div class="three">
+                                    <a href="#">Sifarişlər</a>
+                                    <a href="#">İstəklər siyahısı</a>
+                                    <a href="#">Müqayisələr siyahısı</a>
+                                    <a href="#">Sitemap</a>
+                                </div>
+
+                            </div>
+                            <div class="links">
+                                <h6 class="fourh">Hesabım  <i class="fas fa-angle-down"></i></h6>
+                                <div class="four">
+                                    <a href="#">Daxil ol</a>
+                                    <a href="#">Hesab yarat</a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-5 col-sm-12">
+                        <div class="logo-mob">
+                            <img src="./assets/img/logo_mobex.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Fontawesome link -->
+    <script src="https://kit.fontawesome.com/ad811518ca.js" crossorigin="anonymous"></script>
+    <!-- Fontawesome link -->
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Jquery -->
+    <script src="./assets/js/home.js"></script>
+</body>
+
+</html>
