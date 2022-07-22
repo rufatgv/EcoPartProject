@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = EcoPart.Web.UI
-build_property.ProjectDir = C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPart.Web.UI\
+build_property.ProjectDir = C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\

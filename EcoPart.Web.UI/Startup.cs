@@ -1,3 +1,5 @@
+using EcoPart.Web.UI.Models.DataContexts;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -5,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -34,10 +37,10 @@ namespace EcoPart.Web.UI
 
             });
 
-            //services.AddDbContext<RiodeDbContext>(cfg =>
-            //{
-            //    cfg.UseSqlServer(configuration.GetConnectionString("cString"));
-            //});
+            services.AddDbContext<EcoPartsDbContext>(cfg =>
+            {
+                cfg.UseSqlServer(configuration.GetConnectionString("cString"));
+            });
 
             //services.AddIdentity<RiodeUser, RiodeRole>()
             //    .AddEntityFrameworkStores<RiodeDbContext>()
@@ -66,40 +69,40 @@ namespace EcoPart.Web.UI
             //    cfg.Cookie.Name = "CookieWellCookedNiceDrilYeaaaaaaaaaaaaah";
             //});
 
-        //    services.AddAuthentication();
-        //    services.AddAuthorization(cfg =>
-        //    {
-        //        foreach (var policyName in Program.principals)
-        //        {
-        //            cfg.AddPolicy(policyName, p =>
-        //            {
+            //    services.AddAuthentication();
+            //    services.AddAuthorization(cfg =>
+            //    {
+            //        foreach (var policyName in Program.principals)
+            //        {
+            //            cfg.AddPolicy(policyName, p =>
+            //            {
 
-        //                p.RequireAssertion(handler =>
-        //                {
-        //                    return handler.User.IsInRole("SuperAdmin")
-        //                    || handler.User.HasClaim(policyName, "1");
-        //                });
+            //                p.RequireAssertion(handler =>
+            //                {
+            //                    return handler.User.IsInRole("SuperAdmin")
+            //                    || handler.User.HasClaim(policyName, "1");
+            //                });
 
-        //            });
-        //        }
-
-
+            //            });
+            //        }
 
 
-        //    });
 
-        //    services.AddScoped<UserManager<RiodeUser>>();
-        //    services.AddScoped<SignInManager<RiodeUser>>();
 
-        //    services.AddMediatR(this.GetType().Assembly);
-        //    services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
-        //    services.AddScoped<IClaimsTransformation, AppClaimProvider>();
+            //    });
 
-        //    services.AddFluentValidation(cfg =>
-        //    {
-        //        cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
+            //    services.AddScoped<UserManager<RiodeUser>>();
+            //    services.AddScoped<SignInManager<RiodeUser>>();
 
-        //    });
+            services.AddMediatR(this.GetType().Assembly);
+            services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
+            //    services.AddScoped<IClaimsTransformation, AppClaimProvider>();
+
+            //    services.AddFluentValidation(cfg =>
+            //    {
+            //        cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
+
+            //    });
         }
 
 
@@ -116,42 +119,42 @@ namespace EcoPart.Web.UI
 
             app.UseEndpoints(cfg =>
             {
-             //   cfg.MapControllerRoute(name: "default-accessdenied", pattern: "accessdenied.html", defaults: new
-             //   {
-             //       area = "",
-             //       controller = "account",
-             //       action = "accessdenied"
+                //   cfg.MapControllerRoute(name: "default-accessdenied", pattern: "accessdenied.html", defaults: new
+                //   {
+                //       area = "",
+                //       controller = "account",
+                //       action = "accessdenied"
 
-             //   });
+                //   });
 
-             //   cfg.MapControllerRoute(name: "default-signin", pattern: "signin.html", defaults: new
-             //   {
-             //       area = "",
-             //       controller = "account",
-             //       action = "signin"
+                //   cfg.MapControllerRoute(name: "default-signin", pattern: "signin.html", defaults: new
+                //   {
+                //       area = "",
+                //       controller = "account",
+                //       action = "signin"
 
-             //   });
-             //   cfg.MapControllerRoute(name: "default-register", pattern: "register.html", defaults: new
-             //   {
-             //       area = "",
-             //       controller = "account",
-             //       action = "register"
+                //   });
+                //   cfg.MapControllerRoute(name: "default-register", pattern: "register.html", defaults: new
+                //   {
+                //       area = "",
+                //       controller = "account",
+                //       action = "register"
 
-             //   });
-             //   cfg.MapControllerRoute(name: "default-register-confirm", pattern: "registration-confirm.html", defaults: new
-             //   {
-             //       area = "",
-             //       controller = "account",
-             //       action = "registerConfirm"
+                //   });
+                //   cfg.MapControllerRoute(name: "default-register-confirm", pattern: "registration-confirm.html", defaults: new
+                //   {
+                //       area = "",
+                //       controller = "account",
+                //       action = "registerConfirm"
 
-             //   });
+                //   });
 
 
-             //   cfg.MapAreaControllerRoute(
-             //       name: "defaultAdmin",
-             //       areaName: "Admin",
-             //       pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
-             //);
+                cfg.MapAreaControllerRoute(
+                    name: "defaultAdmin",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
+             );
                 cfg.MapControllerRoute("default", pattern: "{controller=home}/{action=index}/{id?}");
 
 
