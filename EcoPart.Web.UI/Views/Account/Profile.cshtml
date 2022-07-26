@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<section id="first-section">
+    <div class="first-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="./home.html">Ön Səhifə</a>
+                    <span>/ Profilin dəyişdirilməsi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second-section">
+    <div class="second-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+
+                    <div class="form-inputs">
+                        <div class="form-title">
+                            Profil
+                        </div>
+                        <div class="inputs">
+                            <form action="">
+                                <div class="user-info">
+                                    İstifadəçi məlumatları
+                                </div>
+                                <div style="height:70px;" class="email">
+                                    <label for="#">Email<sub>*</sub></label><br>
+                                    <input type="email" placeholder="Email...">
+                                </div>
+                                <div style="height:70px;" class="password">
+                                    <label for="#">Şifrə<sub>*</sub></label><br>
+                                    <input type="password" placeholder="Şifrə...">
+                                </div>
+                                <div style="height:85px;" class="confirmpassword">
+                                    <label for="#">Şifrəni təsdiqlə<sub>*</sub></label><br>
+                                    <input type="password" placeholder="Şifrəni təsdiqlə...">
+                                </div>
+
+                                <div class="contact-info">
+                                    Əlaqə məlumatı
+                                </div>
+                                <div style="height:70px;" class="name-username">
+                                    <div class="name">
+                                        <label for="#">Ad<sub>*</sub></label><br>
+                                        <input type="text" placeholder="Name...">
+                                    </div>
+                                    <div class="username">
+                                        <label for="#">Soyad<sub>*</sub></label><br>
+                                        <input type="text" placeholder="Username...">
+                                    </div>
+                                </div>
+
+                                <div style="height:70px;" class="shop">
+                                    <label for="#">Mağaza<sub>*</sub></label><br>
+                                    <input type="text" placeholder="Mağaza...">
+                                </div>
+
+                                <div style="height:70px;" class="location">
+                                    <label for="#">Ünvan<sub>*</sub></label><br>
+                                    <input type="text" placeholder="Ünvan...">
+                                </div>
+
+                                <div style="height:85px;" class="phone">
+                                    <label for="#">Telefon<sub>*</sub></label><br>
+                                    <input type="number" placeholder="Telefon...">
+                                </div>
+
+                                <div class="payment-location">
+                                    Ödəmə ünvanı
+                                </div>
+
+                                <div style="height:70px;" class="payment-name-username">
+                                    <div class="payment-name">
+                                        <label for="#">Ad</label><br>
+                                        <input type="text" placeholder="Name...">
+                                    </div>
+                                    <div class="payment-username">
+                                        <label for="#">Soyad</label><br>
+                                        <input type="text" placeholder="Username...">
+                                    </div>
+                                </div>
+
+
+                                <div style="height:75px;" class="phone">
+                                    <label for="#">Telefon</label><br>
+                                    <input type="number" placeholder="Telefon...">
+                                </div>
+
+                                <div style="height:125px;line-height: 16px;" class="adress">
+                                    <label for="#">Adress</label><br>
+                                    <input type="text" placeholder="Salon..."><br><br>
+                                    <input type="text" placeholder="Adress...">
+                                </div>
+
+                                <div style="height:70px;" class="city">
+                                    <label for="#">Şəhər</label><br>
+                                    <input type="text" placeholder="Şəhər...">
+                                </div>
+
+
+                                <div style="height:70px;" class="select-country-city">
+                                    <div class="selectcountry">
+                                        <label for="country">Country</label><br>
+                                        <select name="country" id="country">
+                                            <option value="">Azərbaycan</option>
+                                        </select>
+                                    </div>
+                                    <div class="selectcity">
+                                        <label for="city">City</label><br>
+                                        <select name="city" id="city">
+                                            <option value="">Bakı-Yasamal rayonu</option>
+                                            <option value="">Bakı-Xəzər rayonu</option>
+                                            <option value="">Bakı-Xətai rayonu</option>
+                                            <option value="">Bakı-Səbail rayonu</option>
+                                            <option value="">Bakı-Suraxanı rayonu</option>
+                                            <option value="">Bakı-Qaradağ rayonu</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="selectcity">
+                                    <label for="#">Poçt indeks kodu / ZIP</label><br>
+                                    <input type="text" placeholder="Poçt kodu...">
+                                </div>
+
+                                <div class="confirm-deactive-btn">
+                                    <button id="confirm">Qeyd et</button>
+                                    <button id="deactive">Ləğv et</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <div class="about-inputs">
+                        <div style="padding-left: 15px;height:50px;" class="title-about">
+                            Profil məlumatları
+                        </div>
+                        <div style="padding-left: 15px;height:30px;" class="one">
+                            Bu səhifədə siz şəxsi məlumatlarınızı dəyişə bilərsiniz.
+                        </div>
+                        <div style="padding-left: 15px;height:50px;" class="two">
+                            Təhlükəsizlik üçün sizə aşağıda qeyd edilmiş şifrələrdən istifadə etməməyi məsləhət görürük:
+                        </div>
+                        <div class="three">
+                            <ul>
+                                <li>Lüğətdən götürülmüş sözlər.</li>
+                                <li>Abbreviaturalar.</li>
+                                <li style="height:70px;">Ardıcıl və təkrarlanan şifrələr. Misallar: 12345678, 222222, abcdefg, və ya klaviatura üzərində ardıcıl hərflər (qwerty).</li>
+                                <li>Şəxsi məlumatlar. Adınız, doğum tarixiniz, sürücülük və ya şəxsiyyət vəsiqənizin nömrəsi və ya oxşar məlumatlar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section css{ 
+    <link rel="stylesheet" href="~/assets/sass/register.css" />
+}
+
+@section js{ 
+    <script src="~/assets/js/register.js" ></script>
+}

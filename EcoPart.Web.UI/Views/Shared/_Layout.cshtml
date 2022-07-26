@@ -116,12 +116,22 @@
                                 </div>
                                 <div class="sign-btn">
                                     <div class="btns">
-                                        <div class="signin">
-                                            <button> <a style="color:white;text-decoration:none;" href="./login.html">Daxil ol</a> </button>
-                                        </div>
-                                        <div class="signup">
-                                            <button> <a href="./register.html"> Qeydiyyatdan keç</a></button>
-                                        </div>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-action="Profile" asp-controller="account">
+                                                <i style="margin-right: 3px;" class="d-icon-user"></i>@User.GetPrincipalName()
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <div class="signin">
+                                                <button> <a style="color:white;text-decoration:none;" asp-action="Signin" asp-controller="account">Daxil ol</a> </button>
+                                            </div>
+                                            <div class="signup">
+                                                <button> <a asp-action="Register" asp-controller="account"> Qeydiyyatdan keç</a></button>
+                                            </div>
+                                        }
+
                                     </div>
                                 </div>
                             </div>

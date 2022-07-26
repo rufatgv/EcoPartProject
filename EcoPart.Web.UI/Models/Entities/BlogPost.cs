@@ -5,7 +5,7 @@ namespace EcoPart.Web.UI.Models.Entities
     public class BlogPost : BaseEntity
     {
         public string Title { get; set; }
-        public string Body { get; set; }
+        public string Paragraph { get; set; }
         public string ImagePath { get; set; }
 
         public int? CategoryId { get; set; }

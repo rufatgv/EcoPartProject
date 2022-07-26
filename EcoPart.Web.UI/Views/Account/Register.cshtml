@@ -1,0 +1,111 @@
+﻿@model RegisterFormModel
+@{
+    ViewData["Title"] = "Signin";
+}
+
+<section id="first-section">
+    <div class="first-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="./home.html">Ön Səhifə</a>
+                    <span>/ Profilin dəyişdirilməsi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second-section">
+    <div class="second-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+
+                    <div class="form-inputs">
+                        <div class="form-title">
+                            Qeydiyyat
+                        </div>
+                        <div class="inputs">
+                            <form method="post" action="" >
+                                <div asp-validation-summary="All"></div>
+                                @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+                                {
+                                    <div class="form-group mb-3">
+                                        <div class="alert alert-danger text-white ">
+                                            @ViewBag.Message
+                                        </div>
+                                    </div>
+                                }
+                                <div class="user-info">
+                                    Yeni hesab üçün qeydiyyatdan keçin
+                                </div>
+
+
+                                <div style="height:70px;margin-top: 20px;" class="name-username">
+                                    <div class="name">
+                                        <label  for="#">Ad<sub>*</sub></label><br>
+                                        <input asp-for="Name" type="text" placeholder="Ad..." required="">
+                                    </div>
+                                    <div class="username">
+                                        <label  for="#">Soyad<sub>*</sub></label><br>
+                                        <input asp-for="Surname"  type="text" placeholder="Soyad..." required="">
+                                    </div>
+                                </div>
+
+                 
+
+
+                                <div style="height:70px;" class="email">
+                                    <label for="#">Email<sub>*</sub></label><br>
+                                    <input asp-for="Email" type="email" placeholder="Email..." required="">
+                                </div>
+                                <div style="height:70px;" class="password">
+                                    <label for="#">Şifrə<sub>*</sub></label><br>
+                                    <input asp-for="Password" type="password" placeholder="Şifrə..." required="">
+                                </div>
+                                <div style="height:85px;" class="confirmpassword">
+                                    <label for="#">Şifrəni təsdiqlə<sub>*</sub></label><br>
+                                    <input asp-for="ConfirmPassword" type="password" placeholder="Şifrəni təsdiqlə..." required="">
+                                </div>
+
+
+
+
+                                <div class="confirm-deactive-btn">
+                                    <button type="submit" id="confirm">Qeydiyyatdan keç</button>
+
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <div class="about-inputs">
+                        <div style="padding-left: 15px;height:50px;" class="title-about">
+                            Qeydiyyatdan keçmiş istifadəçi olmağın faydaları
+                        </div>
+
+                        <div class="three">
+                            <ul>
+                                <li>Məhsulların qiymətini görmə imkanı</li>
+                                <li>Yeni sifarişlərin daxil edilməsi</li>
+                                <li style="height:70px;">Sifarişlərinizi şəxsiləşdirmək</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section css{
+
+    <link rel="stylesheet" href="~/assets/sass/register.css">
+} 

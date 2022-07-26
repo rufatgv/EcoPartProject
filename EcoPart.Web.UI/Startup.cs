@@ -1,4 +1,6 @@
+using EcoPart.Web.UI.AppCode.Providers;
 using EcoPart.Web.UI.Models.DataContexts;
+using EcoPart.Web.UI.Models.Entities.Membership;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Riode.WebUI.AppCode.Providers;
 
 namespace EcoPart.Web.UI
 {
@@ -25,14 +28,14 @@ namespace EcoPart.Web.UI
             services.AddRouting(cfg => cfg.LowercaseUrls = true);
             services.AddControllersWithViews(cfg =>
             {
-                //cfg.ModelBinderProviders.Insert(0, new BooleanBinderProvider());
+                cfg.ModelBinderProviders.Insert(0, new BooleanBinderProvider());
 
 
-                //var policy = new AuthorizationPolicyBuilder()
-                //    .RequireAuthenticatedUser()
-                //    .Build();
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
 
-                //cfg.Filters.Add(new AuthorizeFilter(policy));
+                cfg.Filters.Add(new AuthorizeFilter(policy));
 
 
             });
@@ -42,67 +45,64 @@ namespace EcoPart.Web.UI
                 cfg.UseSqlServer(configuration.GetConnectionString("cString"));
             });
 
-            //services.AddIdentity<RiodeUser, RiodeRole>()
-            //    .AddEntityFrameworkStores<RiodeDbContext>()
-            //    .AddDefaultTokenProviders();
+            services.AddIdentity<EcoPartsUser, EcoPartsRole>()
+                .AddEntityFrameworkStores<EcoPartsDbContext>()
+                .AddDefaultTokenProviders();
 
-            //services.Configure<IdentityOptions>(cfg =>
-            //{
-            //    cfg.Password.RequireDigit = false;
-            //    cfg.Password.RequireUppercase = false;
-            //    cfg.Password.RequireLowercase = false;
-            //    cfg.Password.RequireNonAlphanumeric = false;
-            //    cfg.Password.RequiredLength = 3;
+            services.Configure<IdentityOptions>(cfg =>
+            {
+                cfg.Password.RequireDigit = false;
+                cfg.Password.RequireUppercase = false;
+                cfg.Password.RequireLowercase = false;
+                cfg.Password.RequireNonAlphanumeric = false;
+                cfg.Password.RequiredLength = 3;
 
-            //    cfg.User.RequireUniqueEmail = true;
-            //    cfg.Lockout.MaxFailedAccessAttempts = 3;
-            //    cfg.Lockout.DefaultLockoutTimeSpan = new System.TimeSpan(0, 3, 0);
+                cfg.User.RequireUniqueEmail = true;
+                cfg.Lockout.MaxFailedAccessAttempts = 3;
+                cfg.Lockout.DefaultLockoutTimeSpan = new System.TimeSpan(0, 3, 0);
 
-            //});
+            });
 
-            //services.ConfigureApplicationCookie(cfg =>
-            //{
-            //    cfg.LoginPath = "/signin.html";
-            //    cfg.AccessDeniedPath = "/accessdenied.html";
+            services.ConfigureApplicationCookie(cfg =>
+            {
+                cfg.LoginPath = "/signin.html";
+                cfg.AccessDeniedPath = "/accessdenied.html";
 
-            //    cfg.ExpireTimeSpan = new System.TimeSpan(240, 24, 5, 22);
-            //    cfg.Cookie.Name = "CookieWellCookedNiceDrilYeaaaaaaaaaaaaah";
-            //});
+                cfg.ExpireTimeSpan = new System.TimeSpan(240, 24, 5, 22);
+                cfg.Cookie.Name = "CookieWellCookedNiceDrilYeaaaaaaaaaaaaah";
+            });
 
-            //    services.AddAuthentication();
-            //    services.AddAuthorization(cfg =>
-            //    {
-            //        foreach (var policyName in Program.principals)
-            //        {
-            //            cfg.AddPolicy(policyName, p =>
-            //            {
+            services.AddAuthentication();
+            services.AddAuthorization(cfg =>
+            {
+                foreach (var policyName in Program.principals)
+                {
+                    cfg.AddPolicy(policyName, p =>
+                    {
 
-            //                p.RequireAssertion(handler =>
-            //                {
-            //                    return handler.User.IsInRole("SuperAdmin")
-            //                    || handler.User.HasClaim(policyName, "1");
-            //                });
+                        p.RequireAssertion(handler =>
+                        {
+                            return handler.User.IsInRole("SuperAdmin")
+                            || handler.User.HasClaim(policyName, "1");
+                        });
 
-            //            });
-            //        }
+                    });
+                }
 
+            });
 
-
-
-            //    });
-
-            //    services.AddScoped<UserManager<RiodeUser>>();
-            //    services.AddScoped<SignInManager<RiodeUser>>();
+            services.AddScoped<UserManager<EcoPartsUser>>();
+            services.AddScoped<SignInManager<EcoPartsUser>>();
 
             services.AddMediatR(this.GetType().Assembly);
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
-            //    services.AddScoped<IClaimsTransformation, AppClaimProvider>();
+            services.AddScoped<IClaimsTransformation, AppClaimProvider>();
 
-            //    services.AddFluentValidation(cfg =>
-            //    {
-            //        cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
+            //services.AddFluentValidation(cfg =>
+            //{
+            //    cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
 
-            //    });
+            //});
         }
 
 
@@ -113,9 +113,9 @@ namespace EcoPart.Web.UI
             app.UseRouting();
             //app.InitDb();
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(cfg =>
             {

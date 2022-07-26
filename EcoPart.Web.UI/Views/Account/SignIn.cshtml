@@ -1,0 +1,59 @@
+﻿@model LoginFormModel
+@{
+    ViewData["Title"] = "SignIn";
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/assets/sass/login.css">
+</head>
+
+<body>
+
+    <div class="cont">
+        <form method="post" asp-action="SignIn">
+            @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+            {
+                <div class="form-group mb-3">
+                    <div class="alert alert-danger text-white ">
+                        @ViewBag.Message
+                    </div>
+                </div>
+            }
+            <div class="form sign-in">
+                <h2>Login</h2>
+                <label>
+                    <span>Istifadəçi adı</span>
+                    <input asp-for="UserName" />
+                </label>
+                <label>
+                    <span>Parol</span>
+                    <input asp-for="Password" />
+                </label>
+                <div class="forgot-register">
+                    <p class="forgot-pass"><a href="#"> Şifrəni unutmusunuz?</a></p>
+
+
+                </div>
+
+                <button type="submit" class="submit">Sign In</button>
+                <button type="button" class="fb-btn"> <a href="./register.html">Register</a> </button>
+            </div>
+            <div class="sub-cont">
+               
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

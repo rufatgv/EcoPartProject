@@ -8,16 +8,13 @@ namespace EcoPart.Web.UI.AppCode.Extensions
     static public partial class Extension
     {
         static public bool SendEmail(this IConfiguration configuration,
-
             string to,
             string subject,
-                string body,
-                bool appendCC = false)
+            string body,
+            bool appendCC = false)
         {
-
             try
             {
-
                 var displayName = configuration["emailAccount:displayName"];
                 var smtpServer = configuration["emailAccount:smtpServer"];
                 var smtpPort = Convert.ToInt32(configuration["emailAccount:smtpPort"]);
@@ -29,29 +26,27 @@ namespace EcoPart.Web.UI.AppCode.Extensions
                 {
                     Subject = subject,
                     Body = body,
-                    IsBodyHtml = true,
+                    IsBodyHtml = true
                 })
                 {
                     if (!string.IsNullOrWhiteSpace(cc) && appendCC)
                         message.CC.Add(cc);
 
-                    SmtpClient smtpclient = new SmtpClient(smtpServer, smtpPort);
-                    smtpclient.Credentials = new NetworkCredential(fromMail, password);
-                    smtpclient.EnableSsl = true;
-                    smtpclient.Send(message);
-
-
+                    SmtpClient client = new SmtpClient(smtpServer, smtpPort);
+                    client.Credentials = new NetworkCredential(fromMail, password);
+                    client.EnableSsl = true;
+                    client.Send(message);
 
                 }
 
 
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return false;
             }
-            return true;
 
+            return true;
         }
 
     }
