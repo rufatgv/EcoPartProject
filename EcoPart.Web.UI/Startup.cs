@@ -1,6 +1,7 @@
 using EcoPart.Web.UI.AppCode.Providers;
 using EcoPart.Web.UI.Models.DataContexts;
 using EcoPart.Web.UI.Models.Entities.Membership;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -98,11 +99,11 @@ namespace EcoPart.Web.UI
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IClaimsTransformation, AppClaimProvider>();
 
-            //services.AddFluentValidation(cfg =>
-            //{
-            //    cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
+            services.AddFluentValidation(cfg =>
+            {
+                cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
 
-            //});
+            });
         }
 
 

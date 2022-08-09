@@ -1,0 +1,343 @@
+﻿@model ShopViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+<section id="first-section">
+    <div class="first-section">
+        <div class="container">
+            <div class="title-pr">
+                Məhsul filterləri
+            </div>
+        </div>
+    </div>
+</section>
+<section id="second-section">
+    <div class="second-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="marka-model">
+
+                        <div class="marka">
+                            Brend <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="model">
+                            Marka <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="location-dest">
+                            Yerləşmə yeri <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="dropdown-checkbox-search">
+                        <div class="searchmarka">
+                            <input type="text" placeholder="Axtar...">
+                        </div>
+                        <div class="checkbox">
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>BMTSR</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>BMTSR</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Continental</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Continental (A klass dublikat)</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Ford</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>German Concept</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Hyundai / Kia</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Japan Concept</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Korean Concept</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Land Rover</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Land Rower</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Limastar</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Mercedes Benz</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Mercedes Benz (Orjinal)</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Mitsubishi</span>
+                            </div>
+
+                        </div>
+                        <div class="close-btn">
+                            <button id="close-btn">Bağla</button>
+                        </div>
+                    </div>
+                    <div class="dropdown-checkbox">
+                        <div class="checkbox">
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Üst</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Sağ</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Sol</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Alt</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Ön</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Arxa</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>İç</span>
+                            </div>
+                            <div class="scroll-checkbox">
+                                <input type="checkbox">
+                                <span>Çöl</span>
+                            </div>
+
+
+
+                        </div>
+                        <div class="close-btn">
+                            <button id="close-btnn">Bağla</button>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-model-logo">
+
+                        <div class="logos">
+
+                            <span>
+                                <img src="~/assets/img/Kia-logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="kia">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/honda.jpeg" style="width: 100%; height:100%;"
+                                     alt="honda">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/193-1934140_infiniti-logo-png-infiniti.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Chevrolet-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="chevrolet">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Ford-logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="ford">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/56f53504d570af72648657e8a92f76e2.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Lexus-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/193-1934140_infiniti-logo-png-infiniti.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Chevrolet-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="chevrolet">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Ford-logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="ford">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/56f53504d570af72648657e8a92f76e2.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Lexus-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/193-1934140_infiniti-logo-png-infiniti.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Chevrolet-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="chevrolet">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Ford-logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="ford">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/56f53504d570af72648657e8a92f76e2.jpeg"
+                                     style="width: 100%; height:100%;" alt="infinity">
+                            </span>
+                            <span>
+                                <img src="~/assets/img/Lexus-Logo.jpeg" style="width: 100%; height:100%;"
+                                     alt="infinity">
+                            </span>
+
+                        </div>
+                        <div class="close-btn-logo">
+                            <button id="close-btn-logo">Bağla</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-total">
+                    <div class="left">
+                        Axtarış nəticələri
+                    </div>
+                    <div class="right">
+                        Məhsul sayı: 720
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="third-section">
+    <div class="third-section">
+        <div class="container">
+            <div class="row">
+                <div class="products-titles">
+                    <div class="productname">
+                        Məhsul adı
+                    </div>
+                    <div class="brend-mark">
+                        <div class="title-marka">
+                            Marka
+                        </div>
+                        <div class="brend">
+                            Brend
+                        </div>
+                    </div>
+                    <div class="empty">
+
+                    </div>
+
+                </div>
+
+                @foreach (var item in Model.Products)
+                {
+
+                    <div class="content-img-brend">
+                        <div class="img-name">
+                            <div class="picture">
+                                <a asp-action="details" asp-route-id="@item.Id">
+                                    <img src="~/uploads/images/@item.ImagePath" style="width: 100%; height:100%;"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="productname-cod">
+                                <div class="productname">
+                                    <a asp-action="details" asp-controller="shop" asp-route-id="@item.Id"> @item.Name</a>
+                                </div>
+                                <div class="cod">
+                                    Kod: @item.PartCodeName
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-marka-brend">
+                            <div class="content-marka">
+                                <span>
+                                    <img src="~/assets/img/Lexus-Logo.jpeg" style="width: 100%; height:100%;"
+                                         alt="">
+                                </span>
+                                <span>
+                                    <img src="~/assets/img/Toyota.jpeg" style="width: 100%; height:100%;" alt="">
+                                </span>
+                            </div>
+                            <div class="content-brend">
+                                A Klass (Dublikat)
+                                Toyota / Lexus
+                            </div>
+
+                        </div>
+                        <div class="buttons">
+                            <div class="price-count-total">
+
+                                <div class="price-count">
+                                    <div class="decrease">
+                                        -
+                                    </div>
+                                    <div class="number">
+                                        1
+                                    </div>
+                                    <div class="increase">
+                                        +
+                                    </div>
+                                </div>
+                                <div class="sumtotal">
+                                    @item.Price  ₼
+                                </div>
+                            </div>
+                            <div class="btns-basket-waiting">
+                                <button id="btnbasket">
+                                    <i class="fas fa-clock"></i> <a href="#">Gözləmə səbəti</a>
+                                </button>
+                                <button id="btnwait">
+                                    <i class="fas fa-shopping-basket"></i> <a href="#">Sifariş səbəti</a>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                }
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@section css{
+    <link rel="stylesheet" href="~/assets/sass/products.css">
+}
+@section js{
+    <script src="~/assets/js/products.js"></script>
+}

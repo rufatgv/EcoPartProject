@@ -26,8 +26,6 @@ namespace EcoPart.Web.UI.Models.DataContexts
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<PartCode> PartCodes { get; set; }
-        public DbSet<ProductPricing> ProductPricings { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -44,10 +42,7 @@ namespace EcoPart.Web.UI.Models.DataContexts
             //    e.HasKey(k => new { k.ProductId, k.SpecificationId });
             //});
 
-            modelBuilder.Entity<ProductPricing>(e =>
-            {
-                e.HasKey(k => new { k.TypeId, k.ProductId });
-            });
+          
 
 
             modelBuilder.Entity<EcoPartsUser>(e =>

@@ -21,67 +21,12 @@
                             <input type="text" placeholder="Axtar...">
                         </div>
                         <div class="checkbox">
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>BMTSR</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>BMTSR</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Continental</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Continental (A klass dublikat)</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Ford</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>German Concept</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Hyundai / Kia</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Japan Concept</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Korean Concept</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Land Rover</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Land Rower</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Limastar</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Mercedes Benz</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Mercedes Benz (Orjinal)</span>
-                            </div>
-                            <div class="scroll-checkbox">
-                                <input type="checkbox">
-                                <span>Mitsubishi</span>
-                            </div>
-
+                            @foreach (var item in ViewBag.Categories)
+                            {
+                                <div class="scroll-checkbox">
+                                    <a asp-controller="shop" asp-action="category" asp-route-categoryId="@item.Id">@item.Name</a>
+                                </div>
+                            }
                         </div>
                         <div class="close-btn">
                             <button id="close-btn">Bağla</button>
@@ -196,7 +141,7 @@
                 <div class="col-lg-12 col-sm-12">
                     <div class="all-product-btn">
                         <button>
-                            <a href="#">BÜTÜN MƏHSULLAR</a>
+                            <a asp-action="index" asp-controller="shop">BÜTÜN MƏHSULLAR</a>
                         </button>
                     </div>
                 </div>
@@ -204,3 +149,10 @@
         </div>
     </div>
 </section>
+@section css{
+    <link rel="stylesheet" href="~/assets/sass/home.css">
+
+}
+@section js{
+    <script src="./assets/js/home.js"></script>
+}

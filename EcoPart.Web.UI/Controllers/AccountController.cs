@@ -112,7 +112,6 @@ namespace EcoParts.Web.UI.Controllers
             return View(model);
         }
         [HttpPost]
-        [Route("/signin.html")]
         [AllowAnonymous]
         public async Task<IActionResult> SignIn(LoginFormModel user)
         {

@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BlogPost>
 @{
     ViewData["Title"] = "SinglePost";
 }
@@ -25,149 +25,105 @@
                             <a href="#">BMW</a>
                         </div>
                         <div class="date-by">
-                            <span class="date">2019-01-17</span>
-                            <span class="by">by Rüfət Axundov</span>
+                            <span class="date">
+                                @foreach (var item in Model)
+                                {
+                                    @if (item.Id == ViewBag.BlogId)
+                                    {
+                                        @item.CreatedDate.ToString("MMM dd, yyyy")
+                                    }
+                                }
+                                                    </span>
+                            <span class="by">
+                                by @foreach (var item in Model)
+                                {
+                                    @if (item.Id == ViewBag.BlogId)
+                                    {
+                                        @item.CreatedById
+                                    }
+                                }
+                            </span>
                         </div>
 
                         <div class="car-title">
-                            BMW Haqqinda
+                            @foreach (var item in Model)
+                            {
+                                @if (item.Id == ViewBag.BlogId)
+                                {
+                                    <h1>@item.Title</h1>
+                                }
+                            }
                         </div>
                         <div class="car-content-first">
-                            BMW – Avtomobil və motosiklet istehsalçısıdır. BMW şirkəti Münhendə təyyarə mühərriklər zavodu kimi Karl Fridrix Rapp, Kamillo Kastilyon, Maks Frits tərəfindən 1916-cı ildə təsis edilib. İlkin dövrdə qəbul olunmuş və hal-hazırdada istifadə olunan ağ-mavi rəngli emblem Bavariya şəhərinin bayrağından götürülmüşdür. Öncə şirkət Avstriya-Macarıstan üçün V12 tipli mühərriklər istehsal etməyə başlayır. Tezliklə Rapp əlavə pula ehtiyac duyur və kompaniyanı tərk edir. Onun yerinə avstriyalı sərmayəçi Frans Cozef Popp firmaya rəhbərlik etməyə başlayır.
-                        </div>
-                        <div class="car-content-second">
-                            Birinci dünya müharibəsindən məğlub çıxmış Almaniyada hərbi qüvvələrə məhdudiyyət qoyulur. Bundan sonra Almaniyada təyyarə istehsal edilə bilməzdi – beləliklə BMW-nin mühərrik istehsalı Almaniya üçün yararsız oldu. 1922-ci ildə BMW Münhendə özünün bu günkü əsas binasını tikir (Hal-hazırda həmin bina şəhər Olimpiya Mərkəzi kimi də fəaliyyət göstərir). 1923-cü ildə Münhendə ilk BMW motosikletləri istehsal olunmağa başlayır. 1928-ci ildə BMW Türingiyada avtomobil zavodu alır və öz ilk maşınını -Dixi ni istehsal etməyə başlayır. İkinci dünya müharibəsi dövründə BMW əsasən Almaniya ordusu üçün reaktiv motorlar istehsal edirdi. 1945-ci ildə müharibədən sonra onun bu fəaliyyəti qalib tərəfin gözündən yayınmadı, BMW-yə 3 illik istehsal moratorisi tədbiq edildi. Bundan əlavə müharibədən sonra BMW-nin demək olar ki, bütün zavodları bombardmanlar nəticəsində məhv olmuşdu. Hər şeyi yenidən başlamaq lazım idi...
+                            @foreach (var item in Model)
+                            {
+                                @if (item.Id == ViewBag.BlogId)
+                                {
+                                    @Html.Raw(item.Paragraph)
+                                }
+                            }
                         </div>
                         <div class="carimage">
-                            <img src="./assets/img/bmw.png" style="width: 100%; height:100%;" alt="bmw">
+
+                            <img src="~/uploads/images/@foreach (var item in Model)
+                            {
+                                @if (item.Id == ViewBag.BlogId)
+                                {
+                                    @item.ImagePath
+                                }
+                            }" style="width: 100%; height:100%;" alt="bmw">
                         </div>
 
-                        <div class="main-news">
-                            <ul>
-                                <li>1948-ci ildən başlayaraq BMW R24, təksilindirli motosiklet və 1951-ci ildə isə BMW müharibədən sonra öz ilk avtomobilini istehsal edir.</li>
-                                <li>1956- İdman avtomobilləri olan 503 və 507-ci modellər istehsala buraxılır.</li>
-                                <li>1974 – BMW ilk dəfə ABS sistemli 3.0 CSL avtomobillərini yarışlara çıxardır.</li>
-                                <li>1980 – ABS sisteminin sənaye istehsalatı və Formula 1 yarışları üçün mühərrikin istehsalatı başlanır. BMW-nin motosiklləri Paris-Dakar rallisini udur. Daha sonra həmin yarışda yenidən üç dəfə qalib gəlir.</li>
-                            </ul>
-                        </div>
+                        @*<div class="main-news">
+                                <ul>
+                                    <li>1948-ci ildən başlayaraq BMW R24, təksilindirli motosiklet və 1951-ci ildə isə BMW müharibədən sonra öz ilk avtomobilini istehsal edir.</li>
+                                    <li>1956- İdman avtomobilləri olan 503 və 507-ci modellər istehsala buraxılır.</li>
+                                    <li>1974 – BMW ilk dəfə ABS sistemli 3.0 CSL avtomobillərini yarışlara çıxardır.</li>
+                                    <li>1980 – ABS sisteminin sənaye istehsalatı və Formula 1 yarışları üçün mühərrikin istehsalatı başlanır. BMW-nin motosiklləri Paris-Dakar rallisini udur. Daha sonra həmin yarışda yenidən üç dəfə qalib gəlir.</li>
+                                </ul>
+                            </div>*@
                     </div>
                     <h3 class="title title-simple text-left text-normal font-weight-bold ls-normal">
                         Related
                         Posts
                     </h3>
                     <div class="related-posts">
-                        <div class="post">
-                            <figure class="post-media">
-                                <a href="#">
-                                    <img src="./assets/img/bmw.png" width="350" height="250"
-                                         alt="post" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">19</span>
-                                    <span class="post-month">JAN</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu
-                                </p>
-                                <a href="post-single.html"
-                                   class="btn btn-link btn-underline btn-primary">
-                                    Read more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="post">
-                            <figure class="post-media">
-                                <a href="#">
-                                    <img src="./assets/img/bmw.png" width="350" height="250"
-                                         alt="post" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">27</span>
-                                    <span class="post-month">SEP</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu
-                                </p>
-                                <a href="post-single.html"
-                                   class="btn btn-link btn-underline btn-primary">
-                                    Read more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="post">
-                            <figure class="post-media">
-                                <a href="#">
-                                    <img src="./assets/img/bmw.png" width="350" height="250"
-                                         alt="post" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">12</span>
-                                    <span class="post-month">SEP</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu
-                                </p>
-                                <a href="post-single.html"
-                                   class="btn btn-link btn-underline btn-primary">
-                                    Read more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="post">
-                            <figure class="post-media">
-                                <a href="#">
-                                    <img src="./assets/img/bmw.png" width="350" height="250"
-                                         alt="post" />
-                                </a>
-                                <div class="post-calendar">
-                                    <span class="post-day">27</span>
-                                    <span class="post-month">SEP</span>
-                                </div>
-                            </figure>
-                            <div class="post-details">
-                                <h4 class="post-title">
-                                    <a href="post-single.html">
-                                        20% Off Coupon for
-                                        Week
-                                    </a>
-                                </h4>
-                                <p class="post-content">
-                                    Lorem ipsum dolor sit amet,onadipiscing elit, sedsd
-                                    doeiu
-                                </p>
-                                <a href="post-single.html"
-                                   class="btn btn-link btn-underline btn-primary">
-                                    Read more<i class="d-icon-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @foreach (var item in Model)
+                        {
+                            @if (!(item.Id == ViewBag.BlogId))
+                            {
+                                if (item.CategoryId == ViewBag.CategoryId)
+                                {
+                                    <div class="post">
+                                        <figure class="post-media">
+                                            <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId">
+                                                <img src="~/uploads/images/@item.ImagePath" width="350" height="250"
+                                                     alt="post" />
+                                            </a>
+                                            <div class="post-calendar">
+                                                <span class="date">
+                                                    @item.CreatedDate.ToString("MMM dd, yyyy")
+                                                </span>
+                                            </div>
+                                        </figure>
+                                        <div class="post-details">
+                                            <h4 class="post-title">
+                                                <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId">
+                                                    @item.Title
+                                                </a>
+                                            </h4>
+                                            <p class="post-content">
+                                                @item.Paragraph.ToEllipse()
+                                            </p>
+                                            <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId"
+                                               class="btn btn-link btn-underline btn-primary">
+                                                Read more<i class="d-icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-12">

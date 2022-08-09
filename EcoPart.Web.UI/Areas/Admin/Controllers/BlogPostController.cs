@@ -87,6 +87,12 @@ namespace EcoPart.Web.UI.Areas.Admin.Controllers
             if(blog==null)
             {
                 return NotFound();
+
+
+
+
+
+
             }
 
             var command = new BlogPostEditCommand();

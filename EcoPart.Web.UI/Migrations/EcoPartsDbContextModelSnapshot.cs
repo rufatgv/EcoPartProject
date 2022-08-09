@@ -392,76 +392,14 @@ namespace EcoPart.Web.UI.Migrations
                     b.Property<string>("PartCodeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ShortDescription")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.ProductPricing", b =>
-                {
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedById")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("ProductTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TypeId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductTypeId");
-
-                    b.ToTable("ProductPricings");
-                });
-
-            modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.ProductType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedById")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.BlogPost", b =>
@@ -550,31 +488,9 @@ namespace EcoPart.Web.UI.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.ProductPricing", b =>
-                {
-                    b.HasOne("EcoPart.Web.UI.Models.Entities.Product", "Product")
-                        .WithMany("Pricings")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EcoPart.Web.UI.Models.Entities.ProductType", "ProductType")
-                        .WithMany()
-                        .HasForeignKey("ProductTypeId");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("ProductType");
-                });
-
             modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.Category", b =>
                 {
                     b.Navigation("Children");
-                });
-
-            modelBuilder.Entity("EcoPart.Web.UI.Models.Entities.Product", b =>
-                {
-                    b.Navigation("Pricings");
                 });
 #pragma warning restore 612, 618
         }

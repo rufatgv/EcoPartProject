@@ -1,0 +1,106 @@
+﻿@model ShopViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+<section id="first-section">
+    <div class="first-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a asp-action="index" asp-controller="home">Ön Səhifə</a>
+                    <a href="./products.html">/ Ehtiyat hissələri</a>
+                    <span>/ </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second-section">
+    <div class="second-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <div class="image-div">
+                        <div class="image">
+                            <img src="~/uploads/images/@Model.Product.ImagePath" width="100%" height="100%" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-7 col-sm-12">
+                    <div class="title-image">
+                        @Model.Product.Name
+                    </div>
+                    <div class="img-name">
+                        <div class="lexsus">
+
+                            <img src="~/assets/img/Lexus-Logo.jpeg" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="toyota">
+                            <img src="~/assets/img/Toyota.jpeg" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="names">
+                            @*@Model.Product.Category.Brand.Name*@
+                        </div>
+                    </div>
+                    <div class="detail-price">
+                        Qiymət: @Model.Product.Price  ₼
+                    </div>
+                    <div class="titles-features">
+                        <div class="titles">
+                            <div class="coder">
+                                Kod:
+                            </div>
+                            <div class="existing mt-3">
+                                Mövcudluq:
+                            </div>
+                        </div>
+
+                        <div class="features">
+                            <div class="coder-feature ">
+                                @Model.Product.PartCodeName
+                            </div>
+                            <div class="countt-feature mt-3">
+                                <div class="second">
+                                    <div class="decrease">
+                                        -
+                                    </div>
+                                    <div class="number">
+                                        1
+                                    </div>
+                                    <div class="increase">
+                                        +
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="btn-product mt-2">
+                        <div class="btns-basket-waiting">
+                            <button id="btnbasket">
+                                <i class="fas fa-clock"></i> <a href="#">Gözləmə səbəti</a>
+                            </button>
+                            <button id="btnwait">
+                                <i class="fas fa-shopping-basket"></i> <a href="#">Sifariş səbəti</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section css{
+
+    <link rel="stylesheet" href="~/assets/sass/productdetail.css" />
+}
+
+@section js {
+    <script src="~/assets/js/productdetail.js"></script>
+}

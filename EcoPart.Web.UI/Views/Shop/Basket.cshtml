@@ -1,0 +1,209 @@
+﻿@model List<Product>
+
+    @{
+    ViewData["Title"] = "Basket";
+    }
+
+
+    <section id="first-section">
+        <div class="first-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="./home.html">Ön Səhifə</a>
+                        <span>/ Səbətdə olanlar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="second-section">
+        <div class="second-section">
+            <div class="container">
+                <div class="basket-title">
+                    Səbətdə olanlar
+                </div>
+
+                <div class="basket-button">
+                    <div class="all-clear-continue">
+                        <button style="background-color:#3a7DCF;height: 35px;width: 171px">
+                            <a style="color:white" href="#">Alış verişə davam et</a>
+                        </button>
+                        <button style="background: color #e4e4e4;;height: 31px;width: 138px;margin-top: 2px;">
+                            <a href="#">Səbəti təmizlə</a>
+                        </button>
+                    </div>
+
+                    <div class="recalculate-complete">
+                        <button style="background-color:#3a7DCF;height: 35px;width: 147px;margin-top: 2px;">
+                            <a style="color:white" href="#">Yenidən hesabla</a>
+                        </button>
+                        <button id="order-comp" style="background-color:#FFD82D;height: 40px;width: 200px">
+                            <a style="color:black;font-size:15px;" href="#">Sifarişi tamamla</a>
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="third-section">
+        <div class="third-section">
+            <div class="container">
+                <div class="basket-products">
+                    <div class="products-title">
+                        <div class="product">
+                            Məhsul
+                        </div>
+                        <div class="price-count-totalprice-title">
+                            <div class="price-title">
+                                Vahid qiyməti
+                            </div>
+                            <div class="count-title">
+                                Say
+                            </div>
+                            <div class="totalprice-title">
+                                Ödəniləcək məbləğ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="img-code-name">
+                            <div class="img">
+                                <img src="~/assets/img/971381R000.jpeg" style="width:100%;height:100%;" alt="">
+                            </div>
+                            <div class="code-name">
+                                <div class="image-name">
+                                    <a href="#">Pec radiatoru 971381R000</a>
+                                </div>
+                                <div class="code">
+                                    Kod: 971381R000
+                                </div>
+                            </div>
+
+                            <div class="delete">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+
+                        <div class="price-count-totalprice">
+                            <div class="first">
+                                62.10 ₼
+                            </div>
+                            <div class="second">
+                                <div class="decrease">
+                                  -
+                                </div>
+                                <div class="number">
+                                  1
+                                </div>
+                                <div class="increase">
+                                  +
+                                </div>
+                            </div>
+                            <div class="third">
+                                62.10 ₼
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="end-total-price">
+                        <div class="title-totalprice">
+                            <div class="title-price">
+                                Toplam məbləğ :
+                            </div>
+                            <div class="common-price">
+                                62.10 ₼
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="end-basket-button">
+                    <div class="all-clear-continue">
+                        <button style="background-color:#3a7DCF;height: 35px;width: 171px">
+                            <a style="color:white" href="#">Alış verişə davam et</a>
+                        </button>
+
+                    </div>
+
+                    <div class="recalculate-complete">
+                        <button style="background-color:#3a7DCF;height: 35px;width: 147px;margin-top: 2px;">
+                            <a style="color:white" href="#">Yenidən hesabla</a>
+                        </button>
+                        <button style="background-color:#FFD82D;height: 40px;width: 200px">
+                            <a style="color:black;font-size:15px;" href="#">Sifarişi tamamla</a>
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @section css{
+        <link rel="stylesheet" href="~/assets/sass/basket.css">
+    }
+
+    @section js {
+        <script src="~/assets/js/basket.js"></script>
+
+        <script>
+
+            function plusQuantity(e) {
+                e.preventDefault();
+
+                let row = $(e.currentTarget).closest('tr')
+
+
+                let data = $(row).data();
+
+                let quantity = $(row).find('input.quantity')[0].value;
+
+                if (!isNaN(quantity)) {
+                    //quantity++;
+                    $(row).data('item-quantity', quantity);
+                }
+
+                else {
+                    return;
+                }
+
+                $(row).find('td.product-price .amount').html(`${parseFloat(data.itemPrice) * parseFloat(quantity)}man`);
+
+                console.log(parseFloat(data.itemPrice) * parseFloat(quantity));
+            }
+
+            function minusQuantity(e) {
+                e.preventDefault();
+
+                let row = $(e.currentTarget).closest('tr')
+
+
+                let data = $(row).data();
+
+                let quantity = $(row).find('input.quantity')[0].value;
+
+                if (!isNaN(quantity)) {
+                    //quantity--;
+                    $(row).data('item-quantity', quantity);
+                }
+                else {
+                    return;
+                }
+
+                $(row).find('td.product-price .amount').html(`${parseFloat(data.itemPrice) * parseFloat(quantity)}man`);
+
+                console.log(parseFloat(data.itemPrice) * parseFloat(quantity));
+            }
+
+        </script>
+
+    }

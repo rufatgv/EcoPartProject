@@ -27,9 +27,15 @@ namespace EcoPart.Web.UI.Controllers
         }
     
 
-        public IActionResult SinglePost()
+        public IActionResult SinglePost(int id,int categoryId)
         {
-            return View();
+            var entity = db.BlogPosts
+                .Where(b => b.DeletedById == null)
+                .ToList();
+
+            ViewBag.BlogId = id;
+            ViewBag.CategoryId = categoryId;
+            return View(entity);
         }
     }
 }

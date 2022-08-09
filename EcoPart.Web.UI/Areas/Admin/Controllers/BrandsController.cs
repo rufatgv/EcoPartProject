@@ -1,4 +1,4 @@
-﻿using EcoPart.Web.UI.AppCode.Modules.BrandModule;
+﻿  using EcoPart.Web.UI.AppCode.Modules.BrandModule;
 using EcoPart.Web.UI.Models.Entities;
 using EcoPart.Web.UI.Models.ViewModels;
 using MediatR;
