@@ -32,7 +32,7 @@
 
 
     <header>
-        <div  class="firstpart-header">
+        <div class="firstpart-header">
             <div class="container">
                 <div class="row">
                     <div class="col-6">
@@ -84,42 +84,42 @@
                             <div class="navbar">
                                 <ul>
                                     <li data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="700"
-                       data-aos-offset="0" >
+                                        data-aos-easing="ease-in-back"
+                                        data-aos-delay="700"
+                                        data-aos-offset="0">
                                         <a asp-action="index" asp-controller="blogpost">Bloqlar</a>
                                     </li>
                                     <li data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="900"
-                       data-aos-offset="0"  >
+                                        data-aos-easing="ease-in-back"
+                                        data-aos-delay="900"
+                                        data-aos-offset="0">
                                         <a asp-action="index" asp-controller="faq">FAQs</a>
                                     </li>
                                     <li data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="1100"
-                       data-aos-offset="0"  >
+                                        data-aos-easing="ease-in-back"
+                                        data-aos-delay="1100"
+                                        data-aos-offset="0">
                                         <a asp-action="contact" asp-controller="home">Əlaqə</a>
                                     </li>
                                     <li data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="1300"
-                       data-aos-offset="0"  >
+                                        data-aos-easing="ease-in-back"
+                                        data-aos-delay="1300"
+                                        data-aos-offset="0">
                                         <a href="#">Təklif / Şikayət</a>
                                     </li>
                                     <li data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="1500"
-                       data-aos-offset="0"  >
+                                        data-aos-easing="ease-in-back"
+                                        data-aos-delay="1500"
+                                        data-aos-offset="0">
                                         <a href="#">Sifarişlər</a>
                                     </li>
 
                                 </ul>
                             </div>
                             <div data-aos="fade-down-right" data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="1700"
-                       data-aos-offset="0" class="account">
+                                 data-aos-easing="ease-in-back"
+                                 data-aos-delay="1700"
+                                 data-aos-offset="0" class="account">
                                 <i class="fas fa-user"></i>
                                 <span>Hesabım</span>
                                 <i class="fas fa-caret-down"></i>
@@ -142,12 +142,13 @@
                                     <div class="btns">
                                         @if (User.Identity.IsAuthenticated)
                                         {
-                                            <a asp-action="Profile" asp-controller="account">
-                                                <i style="margin-right: 3px;" class="d-icon-user"></i>@User.GetPrincipalName()
-                                            </a>
+                                        <a asp-action="Profile" asp-controller="account">
+                                            <button type="button" class="btn btn-primary">Profil</button>
+                                            
+                                        </a>
                                             <a asp-action="logout" asp-controller="account">
-
-
+                                                <button type="button" class="btn btn-secondary">Log out</button>
+                                                
                                             </a>
                                         }
                                         else
@@ -167,9 +168,6 @@
                                 <i class="fas fa-bell"></i>
                             </div>
 
-                            <div class="not-count">
-                                0
-                            </div>
                         </div>
                         <div class="dropdown-noti">
                             <div class="title">
@@ -212,7 +210,10 @@
 
                     </div>
 
-                    <div class="col-lg-6 col-sm-12">
+                    <div data-aos="fade-zoom-in"
+                         data-aos-easing="ease-in-back"
+                         data-aos-delay="2000"
+                         data-aos-offset="0" class="col-lg-6 col-sm-12">
                         <form class="search" method="get" asp-controller="Shop" asp-action="Search">
                             <input type="text" id="search" data-cursor="pointer2" name="query" placeholder="Axtardığınız məhsulun kodunu daxil edin ...">
                             <button type="submit"><i class="fas fa-search"></i></button>
@@ -274,10 +275,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
-                        <div data-aos="flip-up"  data-aos-anchor-placement="center-bottom"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="1000"
-                       data-aos-offset="0" class="markas">
+                        <div class="markas">
                             <ul>
                                 <li>
                                     <a href="./products.html" style="padding-right: 20px;">Toyota/Lexus</a>
@@ -439,18 +437,7 @@
             })
         })
     </script>
-    <script>
 
-        var btn = document.querySelector('.mouse-cursor-gradient-tracking');
-
-        // getting the offset of the page and binding the data on the css variable --x & --y
-        btn.onmousemove = function (e) {
-            var x = e.pageX - btn.offsetLeft
-            var y = e.pageY - btn.offsetTop
-            btn.style.setProperty('--x', x + 'px')
-            btn.style.setProperty('--y', y + 'px')
-        }
-    </script>
     <script>
         AOS.init();
     </script>

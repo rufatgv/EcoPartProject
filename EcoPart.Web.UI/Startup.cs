@@ -56,7 +56,8 @@ namespace EcoPart.Web.UI
                 cfg.Password.RequireLowercase = false;
                 cfg.Password.RequireNonAlphanumeric = false;
                 cfg.Password.RequiredLength = 3;
-
+                cfg.SignIn.RequireConfirmedAccount = true;
+                cfg.SignIn.RequireConfirmedEmail = true;
                 cfg.User.RequireUniqueEmail = true;
                 cfg.Lockout.MaxFailedAccessAttempts = 3;
                 cfg.Lockout.DefaultLockoutTimeSpan = new System.TimeSpan(0, 3, 0);
@@ -108,7 +109,6 @@ namespace EcoPart.Web.UI
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseRouting();
-            //app.InitDb();
 
             app.UseAuthentication();
 
@@ -116,35 +116,6 @@ namespace EcoPart.Web.UI
 
             app.UseEndpoints(cfg =>
             {
-                //   cfg.MapControllerRoute(name: "default-accessdenied", pattern: "accessdenied.html", defaults: new
-                //   {
-                //       area = "",
-                //       controller = "account",
-                //       action = "accessdenied"
-
-                //   });
-
-                //   cfg.MapControllerRoute(name: "default-signin", pattern: "signin.html", defaults: new
-                //   {
-                //       area = "",
-                //       controller = "account",
-                //       action = "signin"
-
-                //   });
-                //   cfg.MapControllerRoute(name: "default-register", pattern: "register.html", defaults: new
-                //   {
-                //       area = "",
-                //       controller = "account",
-                //       action = "register"
-
-                //   });
-                //   cfg.MapControllerRoute(name: "default-register-confirm", pattern: "registration-confirm.html", defaults: new
-                //   {
-                //       area = "",
-                //       controller = "account",
-                //       action = "registerConfirm"
-
-                //   });
 
 
                 cfg.MapAreaControllerRoute(

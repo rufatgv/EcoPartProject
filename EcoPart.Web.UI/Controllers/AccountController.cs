@@ -64,7 +64,7 @@ namespace EcoParts.Web.UI.Controllers
             if (ModelState.IsValid)
             {
                 var user = new EcoPartsUser();
-                user.UserName = $"{model.Name}.{model.Surname}";
+                user.UserName = model.Email;
                 user.Email = model.Email;
                 user.Name = model.Name;
                 user.Surname = model.Surname;

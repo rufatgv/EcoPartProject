@@ -27,7 +27,7 @@
             <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
         </span>
 
-        <form method="post">
+        <form asp-action="signin" method="post">
             @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
             {
                 <div class="form-group mb-3">
@@ -36,9 +36,9 @@
                     </div>
                 </div>
             }
-            <input type="email" name="email" class="form-control" asp-for="UserName" placeholder="Username or Email Address *">
-            <input type="password" name="pass" class="form-control" asp-for="Password" placeholder="Password *">
-            <a asp-action="index" asp-controller="home">Log in</a>
+            <input class="form-control" asp-for="UserName" placeholder="Username or Email Address *">
+            <input class="form-control" asp-for="Password" placeholder="Password *">
+            <input type="submit" value="Log in"/>
             <div id="remember-container">
                 <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
                 <span id="remember">Remember me</span>
