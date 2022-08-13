@@ -20882,3 +20882,7 @@ body.dark #styleSelector .form-control {
     align-items: center;
     column-gap: 5px;
 }
+
+.imagge{
+    background-color:black;
+}

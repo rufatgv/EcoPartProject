@@ -26,6 +26,9 @@ namespace EcoPart.Web.UI.Models.DataContexts
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<PartCode> PartCodes { get; set; }
+        public DbSet<Faq> Faqs { get; set; }
+
+        public DbSet<ContactPost> ContactPosts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

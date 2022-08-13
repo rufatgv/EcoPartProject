@@ -296,18 +296,6 @@
                         </div>
                         <div class="buttons">
                             <div class="price-count-total">
-
-                                <div class="price-count">
-                                    <div class="decrease">
-                                        -
-                                    </div>
-                                    <div class="number">
-                                        1
-                                    </div>
-                                    <div class="increase">
-                                        +
-                                    </div>
-                                </div>
                                 <div class="sumtotal">
                                     @item.Price  ₼
                                 </div>
@@ -316,8 +304,8 @@
                                 <button id="btnbasket">
                                     <i class="fas fa-clock"></i> <a href="#">Gözləmə səbəti</a>
                                 </button>
-                                <button id="btnwait">
-                                    <i class="fas fa-shopping-basket"></i> <a href="#">Sifariş səbəti</a>
+                                <button data-item-id="@item.Id" onclick="addToCart(event)" id="btnwait">
+                                    <i class="fas fa-shopping-basket"></i> <a asp-action="Basket">Sifariş səbəti</a>
                                 </button>
                             </div>
 
@@ -341,5 +329,38 @@
 }
 @section js{
     <script src="~/assets/js/products.js"></script>
+
+    <script>
+        function addToCart(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            let data = $(ev.currentTarget).data();
+            addToBasket(data.itemId);
+
+            console.log(readFromBasket())
+        }
+        function readFromBasket() {
+            return ($.cookie('cards') || '').split(',');
+        }
+        function addToBasket(cardId) {
+            let items = readFromBasket();
+            let length = items.filter(item => item == cardId).length;
+            if (length > 0) return;
+            items.push(cardId);
+            $.ajax({
+                success: function (response) {
+                    if (response.error == true) {
+                        toastr.error(response.message, "Error!");
+                        return;
+                    }
+                    toastr.success("Successfully Added", response.message)
+                    $.cookie('cards', items.toString(), { expires: 7, path: '/' });
+                },
+                error: function (response) {
+                    toastr["error"]("Unsuccessfully", "Data has not been deleted")
+                }
+            })
+        }
+    </script>
 }
 

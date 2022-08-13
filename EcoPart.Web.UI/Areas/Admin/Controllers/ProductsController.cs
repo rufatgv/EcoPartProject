@@ -71,51 +71,54 @@ namespace EcoPart.Web.UI.Areas.Admin.Controllers
         [Authorize(Policy = "admin.products.create")]
         public async Task<IActionResult> Create(ProductCreateCommand command)
         {
-            var product = await mediator.Send(command);
+            
 
-
-            if (product?.ValidationResult != null && !product.ValidationResult.IsValid)
+            if (ModelState.IsValid)
             {
-                return Json(product.ValidationResult);
+                var product = await mediator.Send(command);
+                return RedirectToAction(nameof(Index));
             }
 
-            return Json(new CommandJsonResponse(false, $"Ugurlu emeliyyat, yeni mehsulun kodu:{product.Product.Id}"));
+            return View(command);
         }
         [Authorize(Policy = "admin.products.edit")]
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(ProductSingleQuery query)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await db.Products
-                .FirstOrDefaultAsync(p => p.Id == id);
+            var product = await mediator.Send(query);
             if (product == null)
             {
                 return NotFound();
             }
+            var command = new ProductEditCommand();
+            command.Id = product.Id;
+            command.ImagePath = product.ImagePath;
+            command.Name = product.Name;
+            command.CategoryId = product.CategoryId;
+            command.ForSearch = product.ForSearch;
+            command.Price = product.Price;
+            command.PartCodeName = product.PartCodeName;
             ViewData["CategoryId"] = new SelectList(db.Categories.Where(s => s.DeletedById == null), "Id", "Name", product.CategoryId);
+            //ViewBag.PartCodeNames = db.Products
             ViewBag.Codes = db.PartCodes.Where(ppc => ppc.DeletedById == null)
                .ToList();
-            return View(product);
+            return View(command);
         }
 
-        //[HttpPost]
-        //[Authorize(Policy = "admin.products.edit")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(ProductEditCommand model)
-        //{
+        [HttpPost]
+        [Authorize(Policy = "admin.products.edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([FromRoute] int id, ProductEditCommand command)
+        {
 
-        //    var product = await mediator.Send(model);
+            if (id != command.Id)
+            {
+                return NotFound();
+            }
 
-        //    if (product?.ValidationResult != null && !product.ValidationResult.IsValid)
-        //    {
-        //        return Json(product.ValidationResult);
-        //    }
-
-        //    return Json(new CommandJsonResponse(false, $"Ugurlu emeliyyat, yeni mehsulun kodu:{product.Product.Id}"));
-        //}
+            await mediator.Send(command);
+            ViewData["CategoryId"] = new SelectList(db.Categories.Where(s => s.DeletedById == null), "Id", "Name", command.CategoryId);
+            return RedirectToAction(nameof(Index));
+        }
 
         [HttpPost]
         [Authorize(Policy = "admin.products.delete")]

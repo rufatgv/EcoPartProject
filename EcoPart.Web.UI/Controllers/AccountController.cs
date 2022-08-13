@@ -53,13 +53,11 @@ namespace EcoParts.Web.UI.Controllers
 
         public IActionResult Profile()
         {
-
-
-
             return View();
         }
 
         [HttpPost]
+        [Route("/register.html")]
         public async Task<IActionResult> Register(RegisterFormModel model)
         {
 
@@ -156,7 +154,7 @@ namespace EcoParts.Web.UI.Controllers
         end:
             return View(user);
         }
-
+        [Route("/registration-confirm.html")]
         [AllowAnonymous]
         public async Task<IActionResult> RegisterConfirm(string email, string token)
         {

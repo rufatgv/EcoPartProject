@@ -80,19 +80,13 @@ namespace EcoPart.Web.UI.Areas.Admin.Controllers
         }
 
 
-        //[Authorize(Policy = "admin.blogposts.edit")]
+        [Authorize(Policy = "admin.blogposts.edit")]
         public async Task<IActionResult> Edit(BlogPostSingleQuery query)
         {
             var blog = await mediator.Send(query);
             if(blog==null)
             {
                 return NotFound();
-
-
-
-
-
-
             }
 
             var command = new BlogPostEditCommand();

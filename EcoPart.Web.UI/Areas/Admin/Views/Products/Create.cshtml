@@ -186,18 +186,7 @@
 
                     },
                     success: function (response) {
-                        if (response.error == undefined) {
-                            let errors = response.errors.map(err => {
-                                return {
-                                    propertyName: err.propertyName,
-                                    errorMessage: err.errorMessage
-                                };
-                            });
-
-                            showErrors(errors);
-                            return;
-                        }
-                        else if (response.error == true) {
+                        if (response.error == true) {
                             toastr.error(response.message, "Xəta!");
                             $(btn).removeAttr('disable');
                             return;

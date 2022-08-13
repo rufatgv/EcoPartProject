@@ -288,14 +288,10 @@ C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\EcoPart.Web.UI.pdb
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\EcoPart.Web.UI.genruntimeconfig.cache
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
-C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\EcoPart.Web.UI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Create.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Details.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Edit.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Index.cshtml.g.cs
-C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\bin\Debug\net5.0\FluentValidation.dll
-C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
-C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\EcoPart.Web.UI.csproj.AssemblyReference.cache
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\PartCodes\Create.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\PartCodes\Details.cshtml.g.cs
@@ -313,3 +309,10 @@ C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Shop\Category.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Shop\_ProductListPartial.cshtml.g.cs
 C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Shop\Basket.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Preloader\Index.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Faq\Index.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Faqs\Index.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Faqs\Details.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Faqs\Create.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Faqs\Edit.cshtml.g.cs
+C:\Users\omen\Desktop\FinalProject\EcoPart\EcoPart.Web.UI\EcoPartProject\EcoPart.Web.UI\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs

@@ -1,7 +1,6 @@
 using EcoPart.Web.UI.AppCode.Providers;
 using EcoPart.Web.UI.Models.DataContexts;
 using EcoPart.Web.UI.Models.Entities.Membership;
-using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -92,18 +91,15 @@ namespace EcoPart.Web.UI
 
             });
 
+            services.AddMediatR(this.GetType().Assembly);
+            //services.AddFluentValidation(cfg =>
+            //{
+            //    cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
+            //});
             services.AddScoped<UserManager<EcoPartsUser>>();
             services.AddScoped<SignInManager<EcoPartsUser>>();
-
-            services.AddMediatR(this.GetType().Assembly);
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IClaimsTransformation, AppClaimProvider>();
-
-            services.AddFluentValidation(cfg =>
-            {
-                cfg.RegisterValidatorsFromAssemblies(new[] { this.GetType().Assembly });
-
-            });
         }
 
 
@@ -156,7 +152,7 @@ namespace EcoPart.Web.UI
                     areaName: "Admin",
                     pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}"
              );
-                cfg.MapControllerRoute("default", pattern: "{controller=home}/{action=index}/{id?}");
+                cfg.MapControllerRoute("default", pattern: "{controller=preloader}/{action=index}/{id?}");
 
 
             });

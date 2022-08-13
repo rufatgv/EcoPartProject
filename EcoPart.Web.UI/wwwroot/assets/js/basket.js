@@ -43,24 +43,7 @@ $(document).ready(function(){
 //header
 
 //body
-let plus=document.querySelector(".increase")
-let minus=document.querySelector(".decrease")
-let number=document.querySelector(".number")
-console.log(number);
 
-let count=1;
-plus.addEventListener("click",function(){
-    count++;
-    number.innerText=count;
-    
-})
-
-minus.addEventListener("click",function(){
-    if (count!=1) {
-        count--;
-        number.innerText=count;
-    }    
-})
 
 //body
 

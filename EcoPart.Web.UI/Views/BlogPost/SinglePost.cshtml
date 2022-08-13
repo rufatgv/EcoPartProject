@@ -84,9 +84,11 @@
                             </div>*@
                     </div>
                     <h3 class="title title-simple text-left text-normal font-weight-bold ls-normal">
-                        Related
-                        Posts
-                    </h3>
+                        <H2 style="font-weight:bold; color:black; padding-left:400px; margin-top:60px; margin-bottom:40px; " >
+                            Related
+                            Posts
+                            </H2>
+</h3>
                     <div class="related-posts">
                         @foreach (var item in Model)
                         {
@@ -108,14 +110,14 @@
                                         </figure>
                                         <div class="post-details">
                                             <h4 class="post-title">
-                                                <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId">
+                                                <a style="text-decoration:none ; font-weight:bold ; color:black"  asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId">
                                                     @item.Title
                                                 </a>
                                             </h4>
                                             <p class="post-content">
-                                                @item.Paragraph.ToEllipse()
+                                                @item.Paragraph.HtmlToPlainText().ToEllipse()
                                             </p>
-                                            <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId"
+                                            <a asp-action="singlepost" asp-route-id="@item.Id" asp-route-categoryId="@item.CategoryId" style="color:black; text-decoration:none"
                                                class="btn btn-link btn-underline btn-primary">
                                                 Read more<i class="d-icon-arrow-right"></i>
                                             </a>

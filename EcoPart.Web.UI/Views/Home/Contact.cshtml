@@ -1,0 +1,136 @@
+﻿@model ContactPost
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<section id="contact">
+
+    <h1 class="section-header">Bizimlə əlaqə</h1>
+
+    <div class="contact-wrapper">
+
+
+
+        <form id="contact-form contactForm" method="post" class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input class="form-control" asp-for="FullName" id="name" placeholder="NAME">
+                    <span asp-validation-for="Message"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input class="form-control" id="email" asp-for="Email" placeholder="Email *">
+                    <span asp-validation-for="Message"></span>
+                </div>
+            </div>
+
+
+            <textarea class="form-control" rows="10" asp-for="Message"
+                      placeholder="Comment*"></textarea>
+            <span asp-validation-for="Message"></span>
+
+            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                <div class="alt-send-button">
+                    <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                </div>
+
+            </button>
+
+        </form>
+
+
+
+        <div class="direct-contact-container">
+
+            <ul class="contact-list">
+                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Baku, Azerbaijan</span></i></li>
+
+                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel: +994502000707" title="Zəng edin">+994502000707</a></span></i></li>
+
+                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="E-mail">catdirmiram@gmail.com</a></span></i></li>
+
+            </ul>
+
+            <hr>
+            <ul class="social-media-list">
+                <li>
+                    <a href="#" target="_blank" class="contact-icon">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="contact-icon">
+                        <i class="fa fa-codepen" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="contact-icon">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="contact-icon">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+
+            <div class="copyright">&copy;Narahat Olmuyun</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section css{
+    <link href="~/assets/css/contact.css" rel="stylesheet" />
+    <link href="~/assets/sass/home.css" rel="stylesheet" />
+    <link href="~/libs/toastr.js/toastr.css" rel="stylesheet" />
+}
+
+@section js{
+
+    
+    <script src="~/libs/toastr.js/toastr.min.js"></script>
+    <script src="~/admin/files/assets/js/customize.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        $('#contactForm').submit(function(e){
+            e.preventDefault();
+
+            let formData= new FormData(e.currentTarget);
+
+            $.ajax({
+                url: "@Url.Action("Contact")",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response){
+                    if(response.error == false){
+                        e.currentTarget.reset();
+                        toastr.success(response.message, "Ugurlu");
+                    }
+                            else{
+                    toastr.error(response.message, "Xeta");
+                }
+            },
+                error: function (response) {
+                    toastr.error("Teyin edilmeyen xeta");
+                }
+            });
+        });
+
+
+    });
+
+    </script>
+}

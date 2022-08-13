@@ -4,7 +4,6 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    cursor: url('https://image.pngaaa.com/959/16959-middle.png'), auto !important;
 }
 
 @media only screen and(max-width:768px){
@@ -907,11 +906,11 @@
 //footer
 .social-networks{
     display:flex;
-    padding-top:22px;
+   
     padding-right: 100px;
     margin-top:40px;
     height:88px;
-    background: rgb(2,0,36);
+    background: black;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(157,175,169,1) 0%, rgba(85,204,222,1) 0%, rgba(131,148,152,1) 100%, rgba(91,94,108,1) 100%);
     
     .name-fb-tw{
@@ -920,6 +919,8 @@
         align-items: center;
         color: white;
         gap: 18px;
+        margin-bottom:100px;
+        padding-bottom:100px;
        
 
 

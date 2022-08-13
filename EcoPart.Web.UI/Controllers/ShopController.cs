@@ -31,7 +31,9 @@ namespace EcoPart.Web.UI.Controllers
                 .Where(pc => pc.DeletedById == null)
                 .ToList();
             
-            var query = db.Products.Include(p => p.Category).Where(b => b.DeletedById == null);
+            var query = db.Products.Include(p => p.Category)
+                .ThenInclude(c=>c.Brand)
+                .Where(b => b.DeletedById == null);
             model.PagedViewModel = new PagedViewModel<Product>(query, pageIndex, pageSize);
             return View(model);
         }
@@ -52,7 +54,6 @@ namespace EcoPart.Web.UI.Controllers
             return View(model);
         }
 
-
         [Authorize(Policy = "shop.details")]
         public IActionResult Details(int id)
         {
@@ -65,26 +66,6 @@ namespace EcoPart.Web.UI.Controllers
 
             return View(model);
         }
-
-
-
-        [Authorize(Policy = "shop.categories")]
-        public IActionResult Categories(int id, int pageIndex = 1, int pageSize = 5)
-        {
-            var model = new ShopViewModel();
-            model.Categories = db.Categories
-                .Include(c => c.Children)
-                .Where(c => c.BrandId == id && c.DeletedById == null)
-                .ToList();
-            ViewBag.Brand = db.Brands
-                .Where(c => c.Id == id && c.DeletedById == null)
-                .ToList();
-            var query = db.Products.Include(p => p.Category).Where(b => b.DeletedById == null && b.Category.Brand.Id == id);
-            model.PagedViewModel = new PagedViewModel<Product>(query, pageIndex, pageSize);
-            return View(model);
-        }
-
-
 
         [Authorize(Policy = "shop.search")]
         public async Task<IActionResult> Search(string query)

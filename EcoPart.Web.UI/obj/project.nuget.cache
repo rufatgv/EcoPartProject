@@ -1,12 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "hHYN+om1iySU17HIMkpw/dsq+Fa21hwRteMLiXwOxMzjtbg64G7krtybkDLfHpavHnt7KuIrmqlO5c9PotGNhw==",
+  "dgSpecHash": "1wGUztLcZr0bu2UlP70ayZ6TV1ye6Oiuq57PLRVBLphzVFafGNH88vjqkQgdtBu6Wv8nZcPXMFpRAUmYBc9I+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\omen\\Desktop\\FinalProject\\EcoPart\\EcoPart.Web.UI\\EcoPartProject\\EcoPart.Web.UI\\EcoPart.Web.UI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\omen\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
-    "C:\\Users\\omen\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.1.2\\fluentvalidation.aspnetcore.11.1.2.nupkg.sha512",
-    "C:\\Users\\omen\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\omen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\omen\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\omen\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

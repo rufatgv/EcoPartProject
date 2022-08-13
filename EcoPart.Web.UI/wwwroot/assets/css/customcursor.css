@@ -1,0 +1,52 @@
+﻿*{
+    cursor:none;
+}
+
+.credits {
+    position: absolute;
+    bottom: 20px;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page__inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+
+}
+
+.cursor--small {
+    width: 13px;
+    height: 13px;
+    left: -2.5px;
+    top: -2.5px;
+    border-radius: 50%;
+    z-index: 11000;
+    background: red;
+}
+
+.cursor--canvas {
+    width: 100vw;
+    height: 100vh;
+    z-index: 12000;
+  
+}
+
+.page, .page a {
+    cursor: none;
+}
